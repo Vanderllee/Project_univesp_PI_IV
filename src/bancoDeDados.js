@@ -5,28 +5,28 @@ const sequence = {
     }
 }
 
-const persons = {}
+const students = {}
 
-function savePerson(person) {
-    if(!person.id) person.id = sequence.id
+function saveStudent(student) {
+    if(!student.id) student.id = sequence.id
 
-    persons[person.id] = person
+    students[student.id] = student
 
-    return person
+    return student
 }
 
-function getPerson (id) {
-    return persons[id] || 'Aluno não cadastrado!'
+function getStudent (id) {
+    return students[id] || 'Aluno não cadastrado!'
 }
 
-function getPersons() {
-    return Object.values(persons)
+function getStudents() {
+    return Object.values(students)
 }
 
-function deletePerson(id) {
-    const person = persons[id]
-    delete person
-    return person
+function deleteStudent(id) {
+    const student = students[id]
+    delete student
+    return student
 }
 
-module.exports = {savePerson, getPerson, getPersons, deletePerson}
+module.exports = {saveStudent, getStudent, getStudents, deleteStudent}
